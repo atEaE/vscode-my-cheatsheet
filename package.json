@@ -1,7 +1,7 @@
 {
-  "name": "vs-cheatsheet",
-	"displayName": "vs-cheatsheet",
-	"description": "cheatsheet extensions for vs-code.",
+  "name": "my-cheatsheet",
+	"displayName": "MyCheatsheet for VS Code",
+	"description": "my-cheatsheet extensions for vs code.",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.50.0"
