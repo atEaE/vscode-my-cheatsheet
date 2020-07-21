@@ -10,16 +10,23 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vs-cheatsheet.helloWorld"
+        "onCommand:my-cheatsheet.showCheatsheetToSide"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vs-cheatsheet.helloWorld",
-				"title": "Hello World"
+				"command": "my-cheatsheet.showCheatsheetToSide",
+				"title": "CheatSheet Show"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "%config.title%",
+			"properties": {
+				
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
