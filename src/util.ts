@@ -6,11 +6,15 @@ export namespace CheatsheetFiles {
     export const CHEATSHEET = '.cheatsheet.md'
     const CHEATSHEET_DIRECTORY = ".cheatsheet"
 
-    export function getCheatsheetGlobalDirPath(): string {
+    export function getGlobalCheatsheetDirPath(): string {
         return path.join(os.homedir(), CHEATSHEET_DIRECTORY);
     }
 
-    export function isExistCheatsheetGlobalDir(): boolean {
-        return fs.existsSync(getCheatsheetGlobalDirPath());
+    export function getGlobalCheatsheetDirs(): string[] {
+        return fs.readdirSync(getGlobalCheatsheetDirPath());
+    }
+
+    export function isExistGlobalCheatsheetDir(): boolean {
+        return fs.existsSync(getGlobalCheatsheetDirPath());
     }
 }

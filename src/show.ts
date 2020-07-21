@@ -5,8 +5,8 @@ import * as path from 'path';
 
 export function activate(context: ExtensionContext) {
     function openCheatsheet() {
-        if (files.isExistCheatsheetGlobalDir()) {
-            var result = fs.readdirSync(files.getCheatsheetGlobalDirPath());
+        if (files.isExistGlobalCheatsheetDir()) {
+            var result = fs.readdirSync(files.getGlobalCheatsheetDirPath());
             openCheatsheetFromGlobal(result);
         } else {
             openCheatsheetFromWorkspace()
@@ -16,18 +16,21 @@ export function activate(context: ExtensionContext) {
     async function openCheatsheetFromGlobal(pickItem: string[]) {
         Promise.resolve()
             .then(() => {
-                return window.showQuickPick(pickItem)
+                var pickItems = files.getGlobalCheatsheetDirs();
+                return window.showQuickPick(pickItems)
             })
-            .then((file) => {
-                if (!file) {
-                    // TODO : error handling
+            .then((dir) => {
+                if (!dir) {
                     return;
                 }
 
-                var sheetPath = path.join(files.getCheatsheetGlobalDirPath(), file, files.CHEATSHEET);
-                console.log(sheetPath);
-                var sheet = Uri.file(sheetPath)
-                commands.executeCommand("markdown.showPreviewToSide", sheet)
+                var sheetPath = path.join(files.getGlobalCheatsheetDirPath(), dir, files.CHEATSHEET);
+                if (fs.existsSync(sheetPath)) {
+                    var sheet = Uri.file(sheetPath);
+                    commands.executeCommand("markdown.showPreviewToSide", sheet)
+                } else {
+                    window.showWarningMessage(`'${dir}/${files.CHEATSHEET}' file doesn't exist.`);
+                }
             })
     }
 
