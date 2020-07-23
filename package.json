@@ -22,9 +22,13 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "%config.title%",
+			"title": "My Cheatsheet for VS Code",
 			"properties": {
-				
+				"mycheatsheet.extension.globalcheatsheetDirectory" : {
+					"type": "string",
+					"default": ".cheatsheets",
+					"description": "global cheatsheets directory."
+				}
 			}
 		}
 	},
