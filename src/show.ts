@@ -38,7 +38,6 @@ export function activate(context: ExtensionContext) {
             })
             .then((dir) => {
                 if (!dir) {
-                    window.showErrorMessage(`Unexpected error has occurred.`);
                     return;
                 }
 
