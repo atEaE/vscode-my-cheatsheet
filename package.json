@@ -2,7 +2,7 @@
   "name": "my-cheatsheet",
 	"displayName": "MyCheatsheet for VS Code",
 	"description": "my-cheatsheet extensions for vs code.",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.50.0"
 	},
@@ -11,14 +11,19 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:my-cheatsheet.showCheatsheetToSide"
+		"onCommand:my-cheatsheet.showCheatsheetToSide",
+		"onCommand:my-cheatsheet.addCheatsheet"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "my-cheatsheet.showCheatsheetToSide",
-				"title": "Show CheatSheet"
+				"title": "Show Cheatsheet"
+			},
+			{
+				"command": "my-cheatsheet.addCheatsheet",
+				"title": "Add Cheatsheet"
 			}
 		],
 		"configuration": {
