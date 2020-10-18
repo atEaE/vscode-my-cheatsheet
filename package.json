@@ -3,12 +3,22 @@
 	"displayName": "MyCheatsheet for VS Code",
 	"description": "my-cheatsheet extensions for vs code.",
 	"version": "0.1.0",
+	"publisher": "atEaE",
+	"icon": "resources/logo.png",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atEaE/vscode-my-cheatsheet"
+	},
+	"keywords": [
+		"cheatsheet"
+	],
 	"engines": {
 		"vscode": "^1.50.0"
 	},
-	"icon": "resources/logo.png",
 	"categories": [
-		"Other"
+		"Other",
+		"Programming Languages"
 	],
 	"activationEvents": [
 		"onCommand:my-cheatsheet.showCheatsheetToSide",
