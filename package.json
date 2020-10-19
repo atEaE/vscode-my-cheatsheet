@@ -2,7 +2,7 @@
   "name": "my-cheatsheet",
 	"displayName": "MyCheatsheet for VS Code",
 	"description": "my-cheatsheet extensions for vs code.",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"publisher": "atEaE",
 	"icon": "resources/logo.png",
 	"license": "MIT",
