@@ -9,5 +9,11 @@ Cheatsheet can be written using 'Markdown'.
 To open the cheatsheet press `Ctrl+Shift+P` (Win, Linux) / `Cmd+Shift+P` (Mac) and search for the `Show Cheatsheet` command.
 
 ## Demo
-`Show Cheatsheet` command.
+### `Show Cheatsheet` command.
 ![show_demo](./resources/show_demo.gif)
+
+### `Add Cheatsheet` command.
+![add_demo](./resources/add_demo.gif)
+
+### `Edit Cheatsheet` command.
+![edit_demo](./resources/edit_demo.gif)
