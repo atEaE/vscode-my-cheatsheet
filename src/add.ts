@@ -42,7 +42,7 @@ export function activate(context: ExtensionContext) {
 
         let results = await workspace.findFiles(files.CHEATSHEET);
         if (results.length > 0) {
-            window.showWarningMessage(`The '${files.CHEATSHEET}' file already exists.`)
+            window.showWarningMessage(`The '${files.CHEATSHEET}' file already exists.`);
             return;
         }
         
@@ -53,7 +53,7 @@ export function activate(context: ExtensionContext) {
             } else {
                 window.showInformationMessage(`Create 'workspace/cheatsheet'.`);
             }
-        })
+        });
     }
 
     async function addCheatsheetToGlobal() {
@@ -64,7 +64,7 @@ export function activate(context: ExtensionContext) {
 
         let categoryPath = path.join(files.getGlobalCheatsheetDirPath(), value);
         if (fs.existsSync(categoryPath)) {
-            window.showWarningMessage(`The '${value}' directory already exists.`)
+            window.showWarningMessage(`The '${value}' directory already exists.`);
             return;
         }
 
@@ -82,8 +82,8 @@ export function activate(context: ExtensionContext) {
                 } else {
                     window.showInformationMessage(`Create '${value}/cheatsheet'.`);
                 }
-            })
-        })
+            });
+        });
     }
 
     context.subscriptions.push(commands.registerCommand(

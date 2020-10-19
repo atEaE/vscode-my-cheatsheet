@@ -3,7 +3,7 @@ import { CheatsheetFiles as files } from './util';
 import * as fs from 'fs';
 
 export function activate(context: ExtensionContext) {
-    async function openCheatsheet() {
+    async function editCheatsheet() {
         const pickItems = await files.getAllCheatsheets();
 
         if (pickItems.length === 0) {
@@ -35,12 +35,13 @@ export function activate(context: ExtensionContext) {
                     item.uri = Uri.file(item.path);
                 }
                 
-                commands.executeCommand("markdown.showPreviewToSide", item.uri);
+                commands.executeCommand('vscode.open', item.uri);
             });
     }
-        
+
+
     context.subscriptions.push(commands.registerCommand(
-        'my-cheatsheet.showCheatsheetToSide',
-        openCheatsheet
+        'my-cheatsheet.editCheatsheet',
+        editCheatsheet
     ));
 }
