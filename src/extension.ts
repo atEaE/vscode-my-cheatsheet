@@ -1,5 +1,6 @@
 import { ExtensionContext } from 'vscode';
 import * as addExt from './add';
+import * as editExt from './edit';
 import * as showExt from './show';
 
 export function activate(context: ExtensionContext) {
@@ -11,6 +12,8 @@ function activateMyCheatSheet(context: ExtensionContext) {
 	showExt.activate(context);
 	// Add cheatsheet
 	addExt.activate(context);
+	// Edit cheatsheet
+	editExt.activate(context);
 }
 
 export function deactivate() {}
