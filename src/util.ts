@@ -1,11 +1,11 @@
-import { ExtensionContext, commands, window, workspace, Uri } from 'vscode';
+import { workspace } from 'vscode';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs';
 import { CheatSheet } from './@types/cheatsheet';
 
 export namespace CheatsheetFiles {
-    export const CHEATSHEET = '.cheatsheet.md'
+    export const CHEATSHEET = '.cheatsheet.md';
     const CHEATSHEET_DIRECTORY = workspace.getConfiguration("mycheatsheet.extension").globalcheatsheetDirectory;
 
     export function getGlobalCheatsheetDirPath(): string {
@@ -17,7 +17,7 @@ export namespace CheatsheetFiles {
     }
 
     export async function getAllCheatsheets(): Promise<CheatSheet[]> {
-        const pickItems: CheatSheet[] = []
+        const pickItems: CheatSheet[] = [];
         let results = await workspace.findFiles(CHEATSHEET);
         if (results.length > 0) {
             pickItems.push({
@@ -28,13 +28,13 @@ export namespace CheatsheetFiles {
         }
 
         if (isExistGlobalCheatsheetDir()) {
-            let dirs = getGlobalCheatsheetDirs()
+            let dirs = getGlobalCheatsheetDirs();
             dirs.forEach(dir => {
                 pickItems.push({
                     name: dir,
                     path: path.join(getGlobalCheatsheetDirPath(), dir, CHEATSHEET)
                 });
-            })
+            });
         }
         return pickItems;
     }

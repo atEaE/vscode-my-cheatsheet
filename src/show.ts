@@ -36,11 +36,11 @@ export function activate(context: ExtensionContext) {
                 }
                 
                 commands.executeCommand("markdown.showPreviewToSide", item.uri);
-            })
+            });
     }
         
     context.subscriptions.push(commands.registerCommand(
         'my-cheatsheet.showCheatsheetToSide',
         openCheatsheet
-    ))
+    ));
 }

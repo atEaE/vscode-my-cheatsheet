@@ -36,7 +36,7 @@ export function activate(context: ExtensionContext) {
                 }
                 
                 commands.executeCommand('vscode.open', item.uri);
-            })
+            });
     }
 
 
