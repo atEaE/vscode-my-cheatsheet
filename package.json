@@ -23,7 +23,8 @@
 	"activationEvents": [
 		"onCommand:my-cheatsheet.showCheatsheetToSide",
 		"onCommand:my-cheatsheet.addCheatsheet",
-		"onCommand:my-cheatsheet.editCheatsheet"
+		"onCommand:my-cheatsheet.editCheatsheet",
+		"onCommand:my-cheatsheet.initGlobalCheatSheetsDirectory"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -39,6 +40,10 @@
 			{
 				"command": "my-cheatsheet.editCheatsheet",
 				"title": "Edit Cheatsheet"
+			},
+			{
+				"command": "my-cheatsheet.initGlobalCheatSheetsDirectory",
+				"title": "Init GlobalCheatsheetsDirectory"
 			}
 		],
 		"configuration": {
