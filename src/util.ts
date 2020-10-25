@@ -13,7 +13,9 @@ export namespace CheatsheetFiles {
     }
 
     export function getGlobalCheatsheetDirs(): string[] {
-        return fs.readdirSync(getGlobalCheatsheetDirPath());
+        // ignore git repo
+        let dirs = fs.readdirSync(getGlobalCheatsheetDirPath()).filter(d => d !== ".git");
+        return dirs
     }
 
     export async function getAllCheatsheets(): Promise<CheatSheet[]> {
