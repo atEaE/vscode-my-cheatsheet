@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.0 - 25 October 2020
+- Added global directory initialization feature.
+
 ## 0.3.0 - 20 October 2020
 - Added editing functions.
 
